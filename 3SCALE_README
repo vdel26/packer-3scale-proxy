@@ -1,0 +1,46 @@
+
+HOW TO CONFIGURE YOUR 3SCALE API PROXY
+======================================
+
+This Amazon instance contains an Nginx OpenResty installation. It is ready to be used as an
+API proxy with 3scale, you only need to go into your 3scale account to get the Nginx config
+files and drop them in the corresponding directory (see below).
+
+
+If you don't have a 3scale account yet, you can get one now for free at:
+  http://www.3scale.net/
+
+If you have a 3scale account and you have already set up your API there, you can
+download your config files from here. Run in the command line:
+  > download-3scale-config
+
+Your account info will be saved locally to ~/.config.json for future use. You can modify it at
+anytime by invoking:
+  > download-3scale-config --reset
+
+
+By default the Nginx proxy is prepared to listen for incoming requests at port 80, but you can
+change that by editing your Nginx config and the security group of this instance.
+
+> Where to put your custom Nginx configuration files?
+  /opt/openresty/nginx/conf/
+
+> What is the Nginx home diretory?
+  /opt/openresty/nginx/
+
+> Where can you find the Nginx logs?
+  /opt/openresty/nginx/logs
+
+> How to start the Nginx service:
+  sudo /opt/openresty/nginx/sbin/nginx -p /opt/openresty/nginx/ -c /opt/openresty/nginx/conf/YOUR-CONFIG-FILE.conf
+
+> How to stop it:
+  sudo /opt/openresty/nginx/sbin/nginx -p /opt/openresty/nginx/ -c /opt/openresty/nginx/conf/YOUR-CONFIG-FILE.conf -s stop
+
+> For additional information, don't forget to visit our support portal:
+  https://support.3scale.net/howtos/api-configuration/nginx-proxy
+  https://support.3scale.net/howtos/api-configuration/nginx-on-premise-setup
+  https://support.3scale.net/howtos/api-configuration/nginx-proxy-advanced
+
+======================================
+
