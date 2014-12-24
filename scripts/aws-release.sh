@@ -11,10 +11,10 @@ export THREESCALE_DEPLOYMENT_ENV=\"-ami\"
 " >> .profile
 
 # clean bash history
-find /root/.*history /home/*/.*history -exec rm -f {} \;
+sudo find /root/.*history /home/*/.*history -exec rm -f {} \;
 
 # erase ssh authorized keys
-find / -name "authorized_keys" –exec rm –f {} \;
+sudo find / -name "authorized_keys" –exec rm –f {} \;
 sudo rm /etc/ssg/ssh_host_dsa_key* /etc/ssh/ssh_host_rsa_key* /etc/ssh/ssh_host_key* /etc/ssh/ssh_host_ecdsa_key*
 
 # disable root and ubuntu user password
